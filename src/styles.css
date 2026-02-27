@@ -1,3 +1,122 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
 
-@import 'tailwindcss';
+/* ═══════════════════════════════════════════════════════════════
+   SISTEMA DE TEMAS — NOCTARA
+   Tema oscuro = default | Tema claro = [data-theme="light"]
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* --- Fondos --- */
+  --bg-primary: #0A0F1E;
+  --bg-navbar: rgba(10, 15, 30, 0.9);
+  --bg-card: #141E30;
+  --bg-card-hover: #1A263D;
+  --bg-input: rgba(0, 0, 0, 0.3);
+  --bg-input-focus: rgba(0, 0, 0, 0.5);
+  --bg-icon-wrapper: #1E293B;
+  --bg-icon-wrapper-hover: rgba(203, 162, 234, 0.2);
+
+  /* --- Textos --- */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(145, 210, 244, 0.7);
+  --text-muted: rgba(145, 210, 244, 0.5);
+  --text-placeholder: rgba(145, 210, 244, 0.4);
+  --text-slogan-span: rgba(255, 255, 255, 0.6);
+
+  /* --- Acentos --- */
+  --accent-primary: #CBA2EA;
+  --accent-secondary: #91D2F4;
+  --accent-hover: rgba(203, 162, 234, 0.3);
+
+  /* --- Bordes --- */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-card: #1E293B;
+
+  /* --- Sombras --- */
+  --shadow-card-hover: 0 10px 15px -3px rgba(203, 162, 234, 0.1), 0 4px 6px -4px rgba(203, 162, 234, 0.1);
+
+  /* --- Decoración --- */
+  --deco-line: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  --deco-color: rgba(255, 255, 255, 1);
+
+  /* --- Background image (estrellas) --- */
+  --bg-image:
+    linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.7)),
+    url('/assets/Stars-Pattern.png'),
+    radial-gradient(ellipse at center, rgba(31, 41, 55, 0.3) 0%, rgba(10, 15, 30, 1) 100%);
+  --bg-repeat: no-repeat, repeat, no-repeat;
+  --bg-size: 100% 100%, 100% 900px, 100% 100%;
+
+  /* --- Logo --- */
+  --logo-opacity: 0.9;
+
+  /* --- Badge --- */
+  --badge-bg: #CBA2EA;
+  --badge-text: black;
+}
+
+/* ═══════════════ TEMA CLARO ═══════════════ */
+[data-theme="light"] {
+  /* --- Fondos --- */
+  --bg-primary: #F5F0E8;
+  --bg-navbar: rgba(245, 240, 232, 0.95);
+  --bg-card: #ffffff;
+  --bg-card-hover: #FAF7F2;
+  --bg-input: rgba(27, 42, 74, 0.05);
+  --bg-input-focus: rgba(27, 42, 74, 0.08);
+  --bg-icon-wrapper: rgba(27, 42, 74, 0.08);
+  --bg-icon-wrapper-hover: rgba(27, 42, 74, 0.15);
+
+  /* --- Textos --- */
+  --text-primary: #1B2A4A;
+  --text-secondary: rgba(27, 42, 74, 0.65);
+  --text-muted: rgba(27, 42, 74, 0.45);
+  --text-placeholder: rgba(27, 42, 74, 0.35);
+  --text-slogan-span: rgba(27, 42, 74, 0.5);
+
+  /* --- Acentos --- */
+  --accent-primary: #1B2A4A;
+  --accent-secondary: #8B7355;
+  --accent-hover: rgba(27, 42, 74, 0.15);
+
+  /* --- Bordes --- */
+  --border-subtle: rgba(27, 42, 74, 0.08);
+  --border-card: rgba(27, 42, 74, 0.1);
+
+  /* --- Sombras --- */
+  --shadow-card-hover: 0 10px 25px -5px rgba(27, 42, 74, 0.08), 0 4px 10px -4px rgba(27, 42, 74, 0.05);
+
+  /* --- Decoración --- */
+  --deco-line: linear-gradient(90deg, transparent, rgba(27, 42, 74, 0.2), transparent);
+  --deco-color: rgba(27, 42, 74, 0.7);
+
+  /* --- Background image (con estrellas claras) --- */
+  --bg-image:
+    linear-gradient(rgba(245, 240, 232, 0.8), rgba(245, 240, 232, 0.8)),
+    url('/assets/Stars-Pattern-Light.png'),
+    /* <-- Asegúrate de guardar la imagen nueva con este nombre */
+    radial-gradient(ellipse at center, rgba(245, 240, 232, 0.8) 0%, #EDE6D8 100%);
+  --bg-repeat: no-repeat, repeat, no-repeat;
+  --bg-size: 100% 100%, 100% 900px, 100% 100%;
+
+  /* --- Logo --- */
+  --logo-opacity: 1;
+
+  /* --- Badge --- */
+  --badge-bg: #1B2A4A;
+  --badge-text: #F5F0E8;
+}
+
+body {
+  margin-top: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background-image: var(--bg-image);
+  background-repeat: var(--bg-repeat);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: var(--bg-size);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
